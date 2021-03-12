@@ -1,0 +1,20 @@
+body {
+  min-height: 3000px;
+}
+
+footer, .navbar{
+  background-color: #d63384;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #f4c2c2;
+}
+
+h2 {
+  padding-top: 5rem;
+}
+
+.card img {
+  width: 200px;
+}

@@ -202,11 +202,15 @@
     const btnKirim = document.querySelector('.btn-kirim');
     const btnLoading = document.querySelector('.btn-loading');
     const alertSuccess = document.querySelector('.alert-success');
+    var alerted = 0;
 
     form.addEventListener('submit', e => {
       e.preventDefault()
       btnLoading.classList.toggle('d-none');
       btnKirim.classList.toggle('d-none');
+      if (alerted == 1) {
+        alertSuccess.classList.toggle('d-none');
+      }
       fetch(scriptURL, {
           method: 'POST',
           body: new FormData(form)
@@ -215,6 +219,7 @@
           btnLoading.classList.toggle('d-none');
           btnKirim.classList.toggle('d-none');
           alertSuccess.classList.toggle('d-none');
+          alerted = 1;
           form.reset();
           console.log('Success!', response)
         })
